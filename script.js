@@ -11,6 +11,18 @@ loadSound("score", "audio/score.mp3");
 let highScore = 0;
 let hop = 400
 
+scene("intro", () => {
+  add([
+    text(
+      "Start (Press Space Bar)!\n",
+      {size: 45}
+    )
+  ]);
+
+  keyPress("space", () => {
+    go("game");
+  });
+});
 
 scene("game", () => {
   const PIPE_GAP = 140;
@@ -108,4 +120,4 @@ scene("gameover", (score) => {
   });
 });
 
-go("game");
+go("intro");
