@@ -35,18 +35,26 @@ scene("hard", () => {
 
 
 scene("intro", () => {
+    
   add([
     sprite("bg", {width: width(), height: height()})
   ]);
   add([
+    pos(width() / 2 -100, height() / 2 -100 ),
     text(
-      "Start (Press Space Bar for easy)\n"
-      + "(press enter for meduim)\n"+
-      "(press tab for hard)",
+      "Start \n",
       {size: 45}
-    )
-    
+    ),
+  ]);
 
+  add([
+    pos(width() / 2 -350, height() / 2 +50 ),
+    text(
+      "(Press SpaceBar for easy)\n"
+    + "(press Enter for meduim)\n"+
+      "(press Tab for hard)",
+      {size: 45}
+    ),
   ]);
 
   keyPress("space", () => {
