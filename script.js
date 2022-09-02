@@ -51,7 +51,7 @@ scene("intro", () => {
     pos(width() / 2 -350, height() / 2 +50 ),
     text(
       "(Press SpaceBar for easy)\n"
-    + "(press Enter for meduim)\n"+
+    + "(press Enter for medium)\n"+
       "(press Tab for hard)",
       {size: 45}
     ),
