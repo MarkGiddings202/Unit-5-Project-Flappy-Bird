@@ -23,13 +23,13 @@ scene("easy", () => {
 
 scene("medium", () => {
   hop = 350;
-  gap = 120;
+  gap = 140;
   go("game")
 })
 
 scene("hard", () => {
   hop = 280;
-  gap = 100;
+  gap = 120;
   go("game")
 })
 
@@ -87,7 +87,6 @@ scene("game", () => {
 
   // add a game object to screen
   const player = add([
-    // list of components
     sprite("mj"),
     scale(.07),
     pos(80, 40),
@@ -96,7 +95,8 @@ scene("game", () => {
   ]);
 
   function producePipes(){
-    const offset = rand(-80, 80);
+    // offset changes the generation of pipes 
+    const offset = rand(-130, 130);
 
     add([
       sprite("pipe"),
@@ -117,13 +117,13 @@ scene("game", () => {
     ]);
   }
 
-  loop(1.5, () => {
+  loop(1.2, () => {
     producePipes();
   });
  // pipe speed
   action("pipe", (pipe) => {
          // x-axis y-axis
-    pipe.move(-160, 0);
+    pipe.move(-260, 0);
 
     if (pipe.passed === false && pipe.pos.x < player.pos.x) {
       pipe.passed = true;
