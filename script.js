@@ -57,15 +57,15 @@ scene("intro", () => {
     ),
   ]);
 
-  keyPress("space", () => {
+  onKeyPress("space", () => {
     go("easy");
   });
 
-  keyPress("enter", () => {
+  onKeyPress("enter", () => {
     go("medium");
   });
 
-  keyPress("tab", () => {
+  onKeyPress("tab", () => {
     go("hard");
   });
 
@@ -145,7 +145,7 @@ scene("game", () => {
     }
   });
 
-  keyPress("space", () => {
+  onKeyPress("space", () => {
     play("download"); 
     player.jump(hop);
   });
@@ -169,11 +169,11 @@ scene("gameover", (score) => {
     )
   ]);
 
-  keyPress("space", () => {
+  onKeyPress("space", () => {
     go("game");
   });
 
-  keyPress("enter", () => {
+  onKeyPress("enter", () => {
     highScore = 0;
     go("intro");
   });
